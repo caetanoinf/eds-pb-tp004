@@ -4,7 +4,7 @@ import { Footer } from './Footer';
 
 export const Layout = ({ loggedIn, children }) => {
   return (
-    <div class="container">
+    <div className="container">
       <Header loggedIn={loggedIn} />
 
       <main>{children}</main>
