@@ -2,12 +2,12 @@ import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
-export const Layout = ({ loggedIn, children }) => {
+export const Layout = ({ loggedIn, onLogout, children }) => {
   return (
-    <div className="container">
-      <Header loggedIn={loggedIn} />
+    <div className="app-container">
+      <Header loggedIn={loggedIn} onLogout={onLogout} />
 
-      <main>{children}</main>
+      <main className="app-content">{children}</main>
 
       <Footer />
     </div>

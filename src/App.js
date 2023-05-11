@@ -7,9 +7,21 @@ import './style.css';
 export default function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
 
+  const handleLogin = (evt) => {
+    evt.preventDefault();
+
+    setLoggedIn(true);
+  };
+
+  const handleLogout = (evt) => {
+    evt.preventDefault();
+
+    setLoggedIn(false);
+  };
+
   return (
-    <Layout loggedIn={loggedIn}>
-      {loggedIn ? <HomePage /> : <LoginPage />}
+    <Layout loggedIn={loggedIn} onLogout={handleLogout}>
+      {loggedIn ? <HomePage /> : <LoginPage onSubmit={handleLogin} />}
     </Layout>
   );
 }
